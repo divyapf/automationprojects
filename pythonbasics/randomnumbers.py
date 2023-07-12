@@ -1,4 +1,4 @@
 import random
-number=random.randrange(10,20)
+number=random.randrange(10,20,1)
 print(number)
 
