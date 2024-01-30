@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240130 09:43:28.824" rpa="false" schemaversion="4">
+<suite id="s1" name="TC 1 GET Request" source="C:\Users\DivyaPuthukaraFranci\PycharmProjects\RobotFramewrok2\TestCases\TC_1_GET_Request.robot">
+<test id="s1-t1" name="Get_dolphicam" line="10">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20240130 09:43:29.013" level="INFO">Creating Session using : alias=mysession, url=http://192.168.36.130:18081/api/dolphicam/hello, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240130 09:43:29.012" endtime="20240130 09:43:29.013"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${reposnse}</var>
+<arg>mysession</arg>
+<arg>${command}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20240130 09:43:50.070" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000017D9B3BDBB0&gt;, 'Connection to 192.168.36.130 timed out. (connect timeout=None)')': /api/dolphicam/hello/hello</msg>
+<msg timestamp="20240130 09:44:11.306" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000017D9BDA1D90&gt;, 'Connection to 192.168.36.130 timed out. (connect timeout=None)')': /api/dolphicam/hello/hello</msg>
+<msg timestamp="20240130 09:44:32.753" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000017D9BDA1FA0&gt;, 'Connection to 192.168.36.130 timed out. (connect timeout=None)')': /api/dolphicam/hello/hello</msg>
+<msg timestamp="20240130 09:44:53.798" level="FAIL">ConnectTimeout: HTTPConnectionPool(host='192.168.36.130', port=18081): Max retries exceeded with url: /api/dolphicam/hello/hello (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000017D9BDA21B0&gt;, 'Connection to 192.168.36.130 timed out. (connect timeout=None)'))</msg>
+<status status="FAIL" starttime="20240130 09:43:29.013" endtime="20240130 09:44:53.906"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${reposnse.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240130 09:44:53.906" endtime="20240130 09:44:53.906"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${reposnse.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240130 09:44:53.907" endtime="20240130 09:44:53.907"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${reposnse.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240130 09:44:53.907" endtime="20240130 09:44:53.907"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${reposnse.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20240130 09:44:53.908" endtime="20240130 09:44:53.908"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20240130 09:44:53.908" endtime="20240130 09:44:53.908"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${body}</var>
+<arg>${reposnse.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20240130 09:44:53.908" endtime="20240130 09:44:53.908"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${body}</arg>
+<arg>Dolphicam</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20240130 09:44:53.909" endtime="20240130 09:44:53.909"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${body}</var>
+<arg>${reposnse.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20240130 09:44:53.909" endtime="20240130 09:44:53.909"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${body}</arg>
+<arg>Dolphicam says hi</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20240130 09:44:53.909" endtime="20240130 09:44:53.909"/>
+</kw>
+<status status="FAIL" starttime="20240130 09:43:29.012" endtime="20240130 09:44:53.909">ConnectTimeout: HTTPConnectionPool(host='192.168.36.130', port=18081): Max retries exceeded with url: /api/dolphicam/hello/hello (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000017D9BDA21B0&gt;, 'Connection to 192.168.36.130 timed out. (connect timeout=None)'))</status>
+</test>
+<status status="FAIL" starttime="20240130 09:43:28.826" endtime="20240130 09:44:53.910"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC 1 GET Request">TC 1 GET Request</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240130 09:43:50.070" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000017D9B3BDBB0&gt;, 'Connection to 192.168.36.130 timed out. (connect timeout=None)')': /api/dolphicam/hello/hello</msg>
+<msg timestamp="20240130 09:44:11.306" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000017D9BDA1D90&gt;, 'Connection to 192.168.36.130 timed out. (connect timeout=None)')': /api/dolphicam/hello/hello</msg>
+<msg timestamp="20240130 09:44:32.753" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000017D9BDA1FA0&gt;, 'Connection to 192.168.36.130 timed out. (connect timeout=None)')': /api/dolphicam/hello/hello</msg>
+</errors>
+</robot>
