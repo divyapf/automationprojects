@@ -26,7 +26,7 @@ Get_dolphicam
     Should Contain  ${body}     Dolphicam
 
     #below example of a failed testcase
-    ${body}=  Convert To String    ${reposnse.content}
-    Should Contain  ${body}     Dolphicam says hi
+    #${body}=  Convert To String    ${reposnse.content}
+    #Should Contain  ${body}     Dolphicam says hi
 
     
