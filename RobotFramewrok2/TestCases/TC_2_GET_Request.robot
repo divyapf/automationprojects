@@ -47,3 +47,6 @@ Put_stopscan
 
 #Put_SetTrmMode
    #${reponse2}=    PUT On Session  mysession    ${command_stopscan}
+
+Put_startscan
+   ${reponse2}=    PUT On Session  mysession    ${command_startscan}

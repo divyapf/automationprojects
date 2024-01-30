@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240130 13:59:49.027" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240130 14:31:46.932" rpa="false" schemaversion="4">
 <suite id="s1" name="TC 2 GET Request" source="C:\projects\automationprojects\automationprojects\RobotFramewrok2\TestCases\TC_2_GET_Request.robot">
 <test id="s1-t1" name="Get_Trmstatus" line="15">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20240130 13:59:49.146" level="INFO">Creating Session using : alias=mysession, url=http://192.168.36.107:18081/api/dolphicam/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20240130 13:59:49.145" endtime="20240130 13:59:49.146"/>
+<msg timestamp="20240130 14:31:47.053" level="INFO">Creating Session using : alias=mysession, url=http://192.168.36.107:18081/api/dolphicam/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240130 14:31:47.053" endtime="20240130 14:31:47.053"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${reposnse}</var>
 <arg>mysession</arg>
 <arg>${command_TrmStatus}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20240130 13:59:49.168" level="INFO">GET Request : url=http://192.168.36.107:18081/api/dolphicam/Trmstatus 
+<msg timestamp="20240130 14:31:47.078" level="INFO">GET Request : url=http://192.168.36.107:18081/api/dolphicam/Trmstatus 
  path_url=/api/dolphicam/Trmstatus 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20240130 13:59:49.168" level="INFO">GET Response : url=http://192.168.36.107:18081/api/dolphicam/Trmstatus 
+<msg timestamp="20240130 14:31:47.078" level="INFO">GET Response : url=http://192.168.36.107:18081/api/dolphicam/Trmstatus 
  status=200, reason=OK 
- headers={'Content-Length': '533', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 12:59:49 GMT'} 
- body={"BB":{"SerialNumber":"BB190123","FirmwareVersion":"1.8.0-90-g90fb111","Model":"BB","HwRevision":"3.0","Connected":true,"ImageColor":"Green","ChargeLevel":"56.4 [%]"},"Trm1":{"SerialNumber":"TRM190477","FirmwareVersion":"1.7.1-2-g84151ae","Model":"TRM-BF-2.5MHz","HwRevision":"4.0","Connected":true,"ImageColor":"Green","ChargeLevel":null},"Trm2":{"SerialNumber":"TRM180104","FirmwareVersion":"1.7.1-2-g84151ae","Model":"TRM-AF-3.5MHz","HwRevision":"AF","Connected":true,"ImageColor":"Orange","ChargeLevel":null},"TrmMode":"TRM1 PE"} 
+ headers={'Content-Length': '533', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
+ body={"BB":{"SerialNumber":"BB190123","FirmwareVersion":"1.8.0-90-g90fb111","Model":"BB","HwRevision":"3.0","Connected":true,"ImageColor":"Green","ChargeLevel":"48.8 [%]"},"Trm1":{"SerialNumber":"TRM190477","FirmwareVersion":"1.7.1-2-g84151ae","Model":"TRM-BF-2.5MHz","HwRevision":"4.0","Connected":true,"ImageColor":"Green","ChargeLevel":null},"Trm2":{"SerialNumber":"TRM180104","FirmwareVersion":"1.7.1-2-g84151ae","Model":"TRM-AF-3.5MHz","HwRevision":"AF","Connected":true,"ImageColor":"Orange","ChargeLevel":null},"TrmMode":"TRM1 PE"} 
  </msg>
-<msg timestamp="20240130 13:59:49.168" level="INFO">${reposnse} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240130 13:59:49.146" endtime="20240130 13:59:49.168"/>
+<msg timestamp="20240130 14:31:47.078" level="INFO">${reposnse} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240130 14:31:47.053" endtime="20240130 14:31:47.078"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${reposnse.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240130 13:59:49.169" endtime="20240130 13:59:49.170"/>
+<status status="PASS" starttime="20240130 14:31:47.079" endtime="20240130 14:31:47.080"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${body}</var>
 <arg>${reposnse.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20240130 13:59:49.171" level="INFO">${body} = {"BB":{"SerialNumber":"BB190123","FirmwareVersion":"1.8.0-90-g90fb111","Model":"BB","HwRevision":"3.0","Connected":true,"ImageColor":"Green","ChargeLevel":"56.4 [%]"},"Trm1":{"SerialNumber":"TRM190477...</msg>
-<status status="PASS" starttime="20240130 13:59:49.170" endtime="20240130 13:59:49.171"/>
+<msg timestamp="20240130 14:31:47.080" level="INFO">${body} = {"BB":{"SerialNumber":"BB190123","FirmwareVersion":"1.8.0-90-g90fb111","Model":"BB","HwRevision":"3.0","Connected":true,"ImageColor":"Green","ChargeLevel":"48.8 [%]"},"Trm1":{"SerialNumber":"TRM190477...</msg>
+<status status="PASS" starttime="20240130 14:31:47.080" endtime="20240130 14:31:47.080"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${body}</arg>
 <arg>BB190123</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20240130 13:59:49.171" endtime="20240130 13:59:49.171"/>
+<status status="PASS" starttime="20240130 14:31:47.081" endtime="20240130 14:31:47.081"/>
 </kw>
-<status status="PASS" starttime="20240130 13:59:49.145" endtime="20240130 13:59:49.172"/>
+<status status="PASS" starttime="20240130 14:31:47.052" endtime="20240130 14:31:47.082"/>
 </test>
 <test id="s1-t2" name="Get_dolphicam" line="27">
 <kw name="GET On Session" library="RequestsLibrary">
@@ -53,38 +53,38 @@
 <arg>mysession</arg>
 <arg>${command}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20240130 13:59:49.192" level="INFO">GET Request : url=http://192.168.36.107:18081/api/dolphicam/hello 
+<msg timestamp="20240130 14:31:47.179" level="INFO">GET Request : url=http://192.168.36.107:18081/api/dolphicam/hello 
  path_url=/api/dolphicam/hello 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20240130 13:59:49.192" level="INFO">GET Response : url=http://192.168.36.107:18081/api/dolphicam/hello 
+<msg timestamp="20240130 14:31:47.179" level="INFO">GET Response : url=http://192.168.36.107:18081/api/dolphicam/hello 
  status=200, reason=OK 
- headers={'Content-Length': '22', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 12:59:49 GMT'} 
+ headers={'Content-Length': '22', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
  body="Dolphicam says hello" 
  </msg>
-<msg timestamp="20240130 13:59:49.192" level="INFO">${reposnse1} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240130 13:59:49.173" endtime="20240130 13:59:49.192"/>
+<msg timestamp="20240130 14:31:47.179" level="INFO">${reposnse1} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240130 14:31:47.084" endtime="20240130 14:31:47.179"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${reposnse1.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240130 13:59:49.192" endtime="20240130 13:59:49.193"/>
+<status status="PASS" starttime="20240130 14:31:47.179" endtime="20240130 14:31:47.180"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${body}</var>
 <arg>${reposnse1.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20240130 13:59:49.194" level="INFO">${body} = "Dolphicam says hello"</msg>
-<status status="PASS" starttime="20240130 13:59:49.193" endtime="20240130 13:59:49.194"/>
+<msg timestamp="20240130 14:31:47.181" level="INFO">${body} = "Dolphicam says hello"</msg>
+<status status="PASS" starttime="20240130 14:31:47.180" endtime="20240130 14:31:47.181"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${body}</arg>
 <arg>Dolphicam</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20240130 13:59:49.194" endtime="20240130 13:59:49.194"/>
+<status status="PASS" starttime="20240130 14:31:47.181" endtime="20240130 14:31:47.181"/>
 </kw>
-<status status="PASS" starttime="20240130 13:59:49.173" endtime="20240130 13:59:49.195"/>
+<status status="PASS" starttime="20240130 14:31:47.083" endtime="20240130 14:31:47.182"/>
 </test>
 <test id="s1-t3" name="Put_startscan" line="40">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -92,20 +92,20 @@
 <arg>mysession</arg>
 <arg>${command_startscan}</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20240130 13:59:49.224" level="INFO">PUT Request : url=http://192.168.36.107:18081/api/dolphicam/startscan 
+<msg timestamp="20240130 14:31:47.207" level="INFO">PUT Request : url=http://192.168.36.107:18081/api/dolphicam/startscan 
  path_url=/api/dolphicam/startscan 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20240130 13:59:49.224" level="INFO">PUT Response : url=http://192.168.36.107:18081/api/dolphicam/startscan 
+<msg timestamp="20240130 14:31:47.207" level="INFO">PUT Response : url=http://192.168.36.107:18081/api/dolphicam/startscan 
  status=200, reason=OK 
- headers={'Content-Length': '0', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 12:59:49 GMT'} 
+ headers={'Content-Length': '0', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
  body=None 
  </msg>
-<msg timestamp="20240130 13:59:49.224" level="INFO">${reponse2} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240130 13:59:49.196" endtime="20240130 13:59:49.224"/>
+<msg timestamp="20240130 14:31:47.207" level="INFO">${reponse2} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240130 14:31:47.183" endtime="20240130 14:31:47.207"/>
 </kw>
-<status status="PASS" starttime="20240130 13:59:49.196" endtime="20240130 13:59:49.224"/>
+<status status="PASS" starttime="20240130 14:31:47.183" endtime="20240130 14:31:47.207"/>
 </test>
 <test id="s1-t4" name="Put_stopscan" line="44">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -113,33 +113,55 @@
 <arg>mysession</arg>
 <arg>${command_stopscan}</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20240130 13:59:49.248" level="INFO">PUT Request : url=http://192.168.36.107:18081/api/dolphicam/stopscan 
+<msg timestamp="20240130 14:31:47.310" level="INFO">PUT Request : url=http://192.168.36.107:18081/api/dolphicam/stopscan 
  path_url=/api/dolphicam/stopscan 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20240130 13:59:49.248" level="INFO">PUT Response : url=http://192.168.36.107:18081/api/dolphicam/stopscan 
+<msg timestamp="20240130 14:31:47.310" level="INFO">PUT Response : url=http://192.168.36.107:18081/api/dolphicam/stopscan 
  status=200, reason=OK 
- headers={'Content-Length': '0', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 12:59:49 GMT'} 
+ headers={'Content-Length': '0', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
  body=None 
  </msg>
-<msg timestamp="20240130 13:59:49.249" level="INFO">${reponse2} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240130 13:59:49.226" endtime="20240130 13:59:49.249"/>
+<msg timestamp="20240130 14:31:47.311" level="INFO">${reponse2} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240130 14:31:47.209" endtime="20240130 14:31:47.311"/>
 </kw>
-<status status="PASS" starttime="20240130 13:59:49.225" endtime="20240130 13:59:49.249"/>
+<status status="PASS" starttime="20240130 14:31:47.208" endtime="20240130 14:31:47.311"/>
 </test>
-<status status="PASS" starttime="20240130 13:59:49.028" endtime="20240130 13:59:49.250"/>
+<test id="s1-t5" name="Put_startscan" line="51">
+<kw name="PUT On Session" library="RequestsLibrary">
+<var>${reponse2}</var>
+<arg>mysession</arg>
+<arg>${command_startscan}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20240130 14:31:47.361" level="INFO">PUT Request : url=http://192.168.36.107:18081/api/dolphicam/startscan 
+ path_url=/api/dolphicam/startscan 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20240130 14:31:47.361" level="INFO">PUT Response : url=http://192.168.36.107:18081/api/dolphicam/startscan 
+ status=200, reason=OK 
+ headers={'Content-Length': '0', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
+ body=None 
+ </msg>
+<msg timestamp="20240130 14:31:47.361" level="INFO">${reponse2} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240130 14:31:47.312" endtime="20240130 14:31:47.361"/>
+</kw>
+<status status="PASS" starttime="20240130 14:31:47.312" endtime="20240130 14:31:47.362"/>
+</test>
+<status status="PASS" starttime="20240130 14:31:46.933" endtime="20240130 14:31:47.364"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="TC 2 GET Request">TC 2 GET Request</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="TC 2 GET Request">TC 2 GET Request</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20240130 14:31:47.312" level="WARN">Multiple tests with name 'Put_startscan' executed in suite 'TC 2 GET Request'.</msg>
 </errors>
 </robot>
