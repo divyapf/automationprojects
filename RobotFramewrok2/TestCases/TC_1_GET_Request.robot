@@ -7,6 +7,7 @@ ${base_url}  http://192.168.36.107:18081/api/dolphicam/hello
 ${command}  hello
 
 *** Test Cases ***
+#name of testcase
 Get_dolphicam
 	Create Session    mysession  ${base_url}
 	${reposnse}=  GET On Session   mysession  ${command}
