@@ -1,167 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240130 14:31:46.932" rpa="false" schemaversion="4">
-<suite id="s1" name="TC 2 GET Request" source="C:\projects\automationprojects\automationprojects\RobotFramewrok2\TestCases\TC_2_GET_Request.robot">
-<test id="s1-t1" name="Get_Trmstatus" line="15">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20240130 14:31:47.053" level="INFO">Creating Session using : alias=mysession, url=http://192.168.36.107:18081/api/dolphicam/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20240130 14:31:47.053" endtime="20240130 14:31:47.053"/>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240208 08:36:55.673" rpa="false" schemaversion="4">
+<suite id="s1" name="TC 2 Start DC2" source="C:\projects\automationprojects\automationprojects\RobotFramewrok2\TestCases\TC_2_Start_DC2.robot">
+<test id="s1-t1" name="Open DC2 application" line="7">
+<kw name="Windows Run" library="RPA.Windows">
+<arg>dolphicam2.exe</arg>
+<tag>window</tag>
+<doc>Use Windows Run window to launch an application.</doc>
+<msg timestamp="20240208 08:36:55.938" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'C:\\Users\\DivyaPuthukaraFranci\\PycharmProjects\\RobotFramewrok2\\venv\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240208 08:36:56.484" level="INFO">Sending keys 'dolphicam2.exe' to element: &lt;module 'uiautomation' from 'C:\\Users\\DivyaPuthukaraFranci\\PycharmProjects\\RobotFramewrok2\\venv\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240208 08:36:57.158" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'C:\\Users\\DivyaPuthukaraFranci\\PycharmProjects\\RobotFramewrok2\\venv\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<status status="PASS" starttime="20240208 08:36:55.938" endtime="20240208 08:37:00.689"/>
 </kw>
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${reposnse}</var>
-<arg>mysession</arg>
-<arg>${command_TrmStatus}</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20240130 14:31:47.078" level="INFO">GET Request : url=http://192.168.36.107:18081/api/dolphicam/Trmstatus 
- path_url=/api/dolphicam/Trmstatus 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20240130 14:31:47.078" level="INFO">GET Response : url=http://192.168.36.107:18081/api/dolphicam/Trmstatus 
- status=200, reason=OK 
- headers={'Content-Length': '533', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
- body={"BB":{"SerialNumber":"BB190123","FirmwareVersion":"1.8.0-90-g90fb111","Model":"BB","HwRevision":"3.0","Connected":true,"ImageColor":"Green","ChargeLevel":"48.8 [%]"},"Trm1":{"SerialNumber":"TRM190477","FirmwareVersion":"1.7.1-2-g84151ae","Model":"TRM-BF-2.5MHz","HwRevision":"4.0","Connected":true,"ImageColor":"Green","ChargeLevel":null},"Trm2":{"SerialNumber":"TRM180104","FirmwareVersion":"1.7.1-2-g84151ae","Model":"TRM-AF-3.5MHz","HwRevision":"AF","Connected":true,"ImageColor":"Orange","ChargeLevel":null},"TrmMode":"TRM1 PE"} 
- </msg>
-<msg timestamp="20240130 14:31:47.078" level="INFO">${reposnse} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240130 14:31:47.053" endtime="20240130 14:31:47.078"/>
+<kw name="Set Wait Time" library="RPA.Windows">
+<arg>2</arg>
+<tag>action</tag>
+<doc>Set library wait time for action keywords.</doc>
+<msg timestamp="20240208 08:37:00.689" level="INFO">Previous wait time: 0.500000</msg>
+<msg timestamp="20240208 08:37:00.690" level="INFO">Current wait time: 2.000000</msg>
+<status status="PASS" starttime="20240208 08:37:00.689" endtime="20240208 08:37:00.690"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${reposnse.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240130 14:31:47.079" endtime="20240130 14:31:47.080"/>
+<kw name="Control Window" library="RPA.Windows">
+<arg>executable:dolphicam2.exe</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240208 08:37:00.860" level="INFO">Getting element with locator: executable:dolphicam2.exe and type:WindowControl</msg>
+<msg timestamp="20240208 08:37:00.860" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x000001CBC1CEE9F0&gt;, locator='executable:dolphicam2.exe and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=3840, top=0, bottom=2160, width=3840, height=2160, xcenter=1920, ycenter=1080)</msg>
+<msg timestamp="20240208 08:37:00.860" level="INFO">Locator 'executable:dolphicam2.exe and type:WindowControl' produced matcher: MatchObject(locators=[('executable', 'dolphicam2.exe', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240208 08:37:03.000" level="INFO">Found process with window title: 'dolphicam2'</msg>
+<msg timestamp="20240208 08:37:03.163" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x000001CBC16C64E0&gt;, locator='executable:dolphicam2.exe and type:WindowControl', name='dolphicam2', automation_id='TheDC2MainWindow', control_type='WindowControl', class_name='Window', left=342, right=2282, top=342, bottom=1554, width=1940, height=1212, xcenter=1312, ycenter=948)</msg>
+<status status="PASS" starttime="20240208 08:37:00.690" endtime="20240208 08:37:03.665"/>
 </kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${body}</var>
-<arg>${reposnse.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20240130 14:31:47.080" level="INFO">${body} = {"BB":{"SerialNumber":"BB190123","FirmwareVersion":"1.8.0-90-g90fb111","Model":"BB","HwRevision":"3.0","Connected":true,"ImageColor":"Green","ChargeLevel":"48.8 [%]"},"Trm1":{"SerialNumber":"TRM190477...</msg>
-<status status="PASS" starttime="20240130 14:31:47.080" endtime="20240130 14:31:47.080"/>
+<kw name="Set Wait Time" library="RPA.Windows">
+<arg>2</arg>
+<tag>action</tag>
+<doc>Set library wait time for action keywords.</doc>
+<msg timestamp="20240208 08:37:03.666" level="INFO">Previous wait time: 2.000000</msg>
+<msg timestamp="20240208 08:37:03.666" level="INFO">Current wait time: 2.000000</msg>
+<status status="PASS" starttime="20240208 08:37:03.666" endtime="20240208 08:37:03.667"/>
 </kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${body}</arg>
-<arg>BB190123</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20240130 14:31:47.081" endtime="20240130 14:31:47.081"/>
+<kw name="Click" library="RPA.Windows">
+<arg>name:INSPECTION</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240208 08:37:03.669" level="INFO">Getting element with locator: name:INSPECTION</msg>
+<msg timestamp="20240208 08:37:03.671" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x000001CBC16C64E0&gt;, locator='executable:dolphicam2.exe and type:WindowControl', name='dolphicam2', automation_id='TheDC2MainWindow', control_type='WindowControl', class_name='Window', left=342, right=2282, top=342, bottom=1554, width=1940, height=1212, xcenter=1312, ycenter=948)</msg>
+<msg timestamp="20240208 08:37:03.671" level="INFO">Locator 'name:INSPECTION' produced matcher: MatchObject(locators=[('Name', 'INSPECTION', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240208 08:37:11.462" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ListItemControl object at 0x000001CBC16C5DF0&gt;, locator='name:INSPECTION', name='INSPECTION', automation_id='', control_type='ListItemControl', class_name='ListBoxItem', left=1073, right=1435, top=389, bottom=509, width=362, height=120, xcenter=1254, ycenter=449)</msg>
+<status status="PASS" starttime="20240208 08:37:03.667" endtime="20240208 08:37:13.533"/>
 </kw>
-<status status="PASS" starttime="20240130 14:31:47.052" endtime="20240130 14:31:47.082"/>
+<status status="PASS" starttime="20240208 08:36:55.937" endtime="20240208 08:37:13.534"/>
 </test>
-<test id="s1-t2" name="Get_dolphicam" line="27">
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${reposnse1}</var>
-<arg>mysession</arg>
-<arg>${command}</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20240130 14:31:47.179" level="INFO">GET Request : url=http://192.168.36.107:18081/api/dolphicam/hello 
- path_url=/api/dolphicam/hello 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20240130 14:31:47.179" level="INFO">GET Response : url=http://192.168.36.107:18081/api/dolphicam/hello 
- status=200, reason=OK 
- headers={'Content-Length': '22', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
- body="Dolphicam says hello" 
- </msg>
-<msg timestamp="20240130 14:31:47.179" level="INFO">${reposnse1} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240130 14:31:47.084" endtime="20240130 14:31:47.179"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${reposnse1.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240130 14:31:47.179" endtime="20240130 14:31:47.180"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${body}</var>
-<arg>${reposnse1.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20240130 14:31:47.181" level="INFO">${body} = "Dolphicam says hello"</msg>
-<status status="PASS" starttime="20240130 14:31:47.180" endtime="20240130 14:31:47.181"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${body}</arg>
-<arg>Dolphicam</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20240130 14:31:47.181" endtime="20240130 14:31:47.181"/>
-</kw>
-<status status="PASS" starttime="20240130 14:31:47.083" endtime="20240130 14:31:47.182"/>
-</test>
-<test id="s1-t3" name="Put_startscan" line="40">
-<kw name="PUT On Session" library="RequestsLibrary">
-<var>${reponse2}</var>
-<arg>mysession</arg>
-<arg>${command_startscan}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20240130 14:31:47.207" level="INFO">PUT Request : url=http://192.168.36.107:18081/api/dolphicam/startscan 
- path_url=/api/dolphicam/startscan 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
- body=None 
- </msg>
-<msg timestamp="20240130 14:31:47.207" level="INFO">PUT Response : url=http://192.168.36.107:18081/api/dolphicam/startscan 
- status=200, reason=OK 
- headers={'Content-Length': '0', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
- body=None 
- </msg>
-<msg timestamp="20240130 14:31:47.207" level="INFO">${reponse2} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240130 14:31:47.183" endtime="20240130 14:31:47.207"/>
-</kw>
-<status status="PASS" starttime="20240130 14:31:47.183" endtime="20240130 14:31:47.207"/>
-</test>
-<test id="s1-t4" name="Put_stopscan" line="44">
-<kw name="PUT On Session" library="RequestsLibrary">
-<var>${reponse2}</var>
-<arg>mysession</arg>
-<arg>${command_stopscan}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20240130 14:31:47.310" level="INFO">PUT Request : url=http://192.168.36.107:18081/api/dolphicam/stopscan 
- path_url=/api/dolphicam/stopscan 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
- body=None 
- </msg>
-<msg timestamp="20240130 14:31:47.310" level="INFO">PUT Response : url=http://192.168.36.107:18081/api/dolphicam/stopscan 
- status=200, reason=OK 
- headers={'Content-Length': '0', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
- body=None 
- </msg>
-<msg timestamp="20240130 14:31:47.311" level="INFO">${reponse2} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240130 14:31:47.209" endtime="20240130 14:31:47.311"/>
-</kw>
-<status status="PASS" starttime="20240130 14:31:47.208" endtime="20240130 14:31:47.311"/>
-</test>
-<test id="s1-t5" name="Put_startscan" line="51">
-<kw name="PUT On Session" library="RequestsLibrary">
-<var>${reponse2}</var>
-<arg>mysession</arg>
-<arg>${command_startscan}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20240130 14:31:47.361" level="INFO">PUT Request : url=http://192.168.36.107:18081/api/dolphicam/startscan 
- path_url=/api/dolphicam/startscan 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
- body=None 
- </msg>
-<msg timestamp="20240130 14:31:47.361" level="INFO">PUT Response : url=http://192.168.36.107:18081/api/dolphicam/startscan 
- status=200, reason=OK 
- headers={'Content-Length': '0', 'Server': 'Microsoft-HTTPAPI/2.0', 'Date': 'Tue, 30 Jan 2024 13:31:47 GMT'} 
- body=None 
- </msg>
-<msg timestamp="20240130 14:31:47.361" level="INFO">${reponse2} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240130 14:31:47.312" endtime="20240130 14:31:47.361"/>
-</kw>
-<status status="PASS" starttime="20240130 14:31:47.312" endtime="20240130 14:31:47.362"/>
-</test>
-<status status="PASS" starttime="20240130 14:31:46.933" endtime="20240130 14:31:47.364"/>
+<status status="PASS" starttime="20240208 08:36:55.675" endtime="20240208 08:37:13.538"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="0" skip="0" id="s1" name="TC 2 GET Request">TC 2 GET Request</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 2 Start DC2">TC 2 Start DC2</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20240130 14:31:47.312" level="WARN">Multiple tests with name 'Put_startscan' executed in suite 'TC 2 GET Request'.</msg>
+<msg timestamp="20240208 08:36:55.936" level="ERROR">Error in file 'C:\projects\automationprojects\automationprojects\RobotFramewrok2\TestCases\TC_2_Start_DC2.robot' on line 4: Importing library 'RPA.Excel.Files' failed: ModuleNotFoundError: No module named 'RPA.Excel'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\DivyaPuthukaraFranci\PycharmProjects\RobotFramewrok2\venv\Scripts\robot.exe
+  C:\Users\DivyaPuthukaraFranci\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\DivyaPuthukaraFranci\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\DivyaPuthukaraFranci\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\DivyaPuthukaraFranci\AppData\Local\Programs\Python\Python312
+  C:\Users\DivyaPuthukaraFranci\PycharmProjects\RobotFramewrok2\venv
+  C:\Users\DivyaPuthukaraFranci\PycharmProjects\RobotFramewrok2\venv\Lib\site-packages
+  C:\Users\DivyaPuthukaraFranci\PycharmProjects\RobotFramewrok2\venv\Lib\site-packages\win32
+  C:\Users\DivyaPuthukaraFranci\PycharmProjects\RobotFramewrok2\venv\Lib\site-packages\win32\lib
+  C:\Users\DivyaPuthukaraFranci\PycharmProjects\RobotFramewrok2\venv\Lib\site-packages\Pythonwin</msg>
 </errors>
 </robot>

@@ -21,16 +21,19 @@ print("Welcome to the Quiz!")
 playing = input("do you want to play?yes/No:   ")
 
 if playing.lower() != "yes":
+    print('okay, maybe next time.........')
     quit()
-
 print("okay! lets play")
+
+score = 0
 
 answer = input("what does DNA stand for ?  ")
 
 #str.casefold()--to ignore case sensitivity of input text
 
-if answer.casefold() == "deoxyribonuclicacid":
+if answer.casefold() == "deoxyribonucleic":
     print("Correct")
+    score += 1
 else:
     print("Incorrect")
 
@@ -38,6 +41,7 @@ answer = input("what does CPU stand for ?  ")
 
 if answer.casefold() == "computer processing unit":
     print("Correct")
+    score += 1
 else:
     print("Incorrect")
 
@@ -45,5 +49,9 @@ answer = input("what does RAM stand for ?  ")
 
 if answer.casefold() == "random acess memory":
     print("Correct")
+    score += 1
 else:
     print("Incorrect")
+
+print('you have got '+ str(score) + ' questions correct!')
+print('you have got '+ str((score/4)*100) + '%')
