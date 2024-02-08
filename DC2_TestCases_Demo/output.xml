@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240208 13:08:31.693" rpa="false" schemaversion="4">
+<suite id="s1" name="TC2 TakeScreenShot" source="C:\projects\automationprojects\DC2_TestCases_Demo\TestCases\TC2_TakeScreenShot.robot">
+<test id="s1-t1" name="Open DC2 application" line="5">
+<kw name="Windows Run" library="RPA.Windows">
+<arg>dolphicam2.exe</arg>
+<tag>window</tag>
+<doc>Use Windows Run window to launch an application.</doc>
+<msg timestamp="20240208 13:08:31.956" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'C:\\Users\\DivyaPuthukaraFranci\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240208 13:08:32.504" level="INFO">Sending keys 'dolphicam2.exe' to element: &lt;module 'uiautomation' from 'C:\\Users\\DivyaPuthukaraFranci\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240208 13:08:33.173" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'C:\\Users\\DivyaPuthukaraFranci\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<status status="PASS" starttime="20240208 13:08:31.956" endtime="20240208 13:08:36.698"/>
+</kw>
+<kw name="Set Wait Time" library="RPA.Windows">
+<arg>2</arg>
+<tag>action</tag>
+<doc>Set library wait time for action keywords.</doc>
+<msg timestamp="20240208 13:08:36.699" level="INFO">Previous wait time: 0.500000</msg>
+<msg timestamp="20240208 13:08:36.699" level="INFO">Current wait time: 2.000000</msg>
+<status status="PASS" starttime="20240208 13:08:36.699" endtime="20240208 13:08:36.699"/>
+</kw>
+<kw name="Control Window" library="RPA.Windows">
+<arg>executable:dolphicam2.exe</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240208 13:08:36.861" level="INFO">Getting element with locator: executable:dolphicam2.exe and type:WindowControl</msg>
+<msg timestamp="20240208 13:08:36.862" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000025037C3BF50&gt;, locator='executable:dolphicam2.exe and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=3840, top=0, bottom=2160, width=3840, height=2160, xcenter=1920, ycenter=1080)</msg>
+<msg timestamp="20240208 13:08:36.862" level="INFO">Locator 'executable:dolphicam2.exe and type:WindowControl' produced matcher: MatchObject(locators=[('executable', 'dolphicam2.exe', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240208 13:08:37.420" level="INFO">Found process with window title: 'dolphicam2'</msg>
+<msg timestamp="20240208 13:08:37.704" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000025038268E00&gt;, locator='executable:dolphicam2.exe and type:WindowControl', name='dolphicam2', automation_id='TheDC2MainWindow', control_type='WindowControl', class_name='Window', left=1300, right=3240, top=290, bottom=1502, width=1940, height=1212, xcenter=2270, ycenter=896)</msg>
+<status status="PASS" starttime="20240208 13:08:36.700" endtime="20240208 13:08:38.209"/>
+</kw>
+<kw name="Set Wait Time" library="RPA.Windows">
+<arg>2</arg>
+<tag>action</tag>
+<doc>Set library wait time for action keywords.</doc>
+<msg timestamp="20240208 13:08:38.210" level="INFO">Previous wait time: 2.000000</msg>
+<msg timestamp="20240208 13:08:38.210" level="INFO">Current wait time: 2.000000</msg>
+<status status="PASS" starttime="20240208 13:08:38.210" endtime="20240208 13:08:38.210"/>
+</kw>
+<kw name="Click" library="RPA.Windows">
+<arg>name:INSPECTION</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240208 13:08:38.212" level="INFO">Getting element with locator: name:INSPECTION</msg>
+<msg timestamp="20240208 13:08:38.213" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000025038268E00&gt;, locator='executable:dolphicam2.exe and type:WindowControl', name='dolphicam2', automation_id='TheDC2MainWindow', control_type='WindowControl', class_name='Window', left=1300, right=3240, top=290, bottom=1502, width=1940, height=1212, xcenter=2270, ycenter=896)</msg>
+<msg timestamp="20240208 13:08:38.214" level="INFO">Locator 'name:INSPECTION' produced matcher: MatchObject(locators=[('Name', 'INSPECTION', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240208 13:08:46.524" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ListItemControl object at 0x0000025038268410&gt;, locator='name:INSPECTION', name='INSPECTION', automation_id='', control_type='ListItemControl', class_name='ListBoxItem', left=2033, right=2393, top=337, bottom=457, width=360, height=120, xcenter=2213, ycenter=397)</msg>
+<status status="PASS" starttime="20240208 13:08:38.211" endtime="20240208 13:08:48.586"/>
+</kw>
+<status status="PASS" starttime="20240208 13:08:31.956" endtime="20240208 13:08:48.587"/>
+</test>
+<test id="s1-t2" name="Take Screenshot of DC2" line="12">
+<kw name="Screenshot" library="RPA.Windows">
+<arg>name:INSPECTION</arg>
+<arg>inspection.png</arg>
+<tag>action</tag>
+<doc>Take a screenshot of the element defined by the locator.</doc>
+<msg timestamp="20240208 13:08:48.589" level="INFO">Getting element with locator: name:INSPECTION</msg>
+<msg timestamp="20240208 13:08:48.590" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000025038268E00&gt;, locator='executable:dolphicam2.exe and type:WindowControl', name='dolphicam2', automation_id='TheDC2MainWindow', control_type='WindowControl', class_name='Window', left=1300, right=3240, top=290, bottom=1502, width=1940, height=1212, xcenter=2270, ycenter=896)</msg>
+<msg timestamp="20240208 13:08:48.590" level="INFO">Locator 'name:INSPECTION' produced matcher: MatchObject(locators=[('Name', 'INSPECTION', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240208 13:08:56.943" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ListItemControl object at 0x0000025037963560&gt;, locator='name:INSPECTION', name='INSPECTION', automation_id='', control_type='ListItemControl', class_name='ListBoxItem', left=2033, right=2393, top=337, bottom=457, width=360, height=120, xcenter=2213, ycenter=397)</msg>
+<status status="PASS" starttime="20240208 13:08:48.588" endtime="20240208 13:08:56.972"/>
+</kw>
+<kw name="Get Element" library="RPA.Windows">
+<var>${element}</var>
+<arg>name:INSPECTION</arg>
+<doc>Get a Control Windows element defined by the locator.</doc>
+<msg timestamp="20240208 13:08:56.973" level="INFO">Getting element with locator: name:INSPECTION</msg>
+<msg timestamp="20240208 13:08:56.973" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000025038268E00&gt;, locator='executable:dolphicam2.exe and type:WindowControl', name='dolphicam2', automation_id='TheDC2MainWindow', control_type='WindowControl', class_name='Window', left=1300, right=3240, top=290, bottom=1502, width=1940, height=1212, xcenter=2270, ycenter=896)</msg>
+<msg timestamp="20240208 13:08:56.973" level="INFO">Locator 'name:INSPECTION' produced matcher: MatchObject(locators=[('Name', 'INSPECTION', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240208 13:09:05.302" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ListItemControl object at 0x000002503830F890&gt;, locator='name:INSPECTION', name='INSPECTION', automation_id='', control_type='ListItemControl', class_name='ListBoxItem', left=2033, right=2393, top=337, bottom=457, width=360, height=120, xcenter=2213, ycenter=397)</msg>
+<msg timestamp="20240208 13:09:05.303" level="INFO">${element} = WindowsElement(item=&lt;uiautomation.uiautomation.ListItemControl object at 0x000002503830F890&gt;, locator='name:INSPECTION', name='INSPECTION', automation_id='', control_type='ListItemControl', class_name...</msg>
+<status status="PASS" starttime="20240208 13:08:56.972" endtime="20240208 13:09:05.303"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${element.name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240208 13:09:05.303" endtime="20240208 13:09:05.304"/>
+</kw>
+<status status="PASS" starttime="20240208 13:08:48.588" endtime="20240208 13:09:05.304"/>
+</test>
+<status status="PASS" starttime="20240208 13:08:31.694" endtime="20240208 13:09:05.305"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="TC2 TakeScreenShot">TC2 TakeScreenShot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
